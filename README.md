@@ -1,5 +1,7 @@
 # Android Location
 
+![alt text](https://www.ryko.com/wp-content/uploads/2016/10/location.jpg "Logo Title Text 1")
+
 For an application to have permission to get the location from a device we will need to require the following permissions in the AndroidManifest.xml file.
 
 ```xml

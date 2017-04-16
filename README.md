@@ -2,11 +2,9 @@
 
 For an application to have permission to get the location from a device we will need to require the following permissions in the AndroidManifest.xml file.
 
-`<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />`
-
-`<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />`
-
-`<uses-permission android:name="android.permission.INTERNET" />`
+```<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+<uses-permission android:name="android.permission.INTERNET" />```
 
 ACCESS_COARSE_LOCATION is used when we use network location provider for our Android app. But, ACCESS_FINE_LOCATION is providing permission for both providers. INTERNET permission is must for the use of network provider.
 

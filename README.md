@@ -15,13 +15,15 @@ For our application to get GPS-information from a device we need to use the clas
 
 ## LocationManager:
 
-`java
+```java
 locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
-`
+```
 
 The Android LocationManager is a class which has access to the location of the device. It has a method called requestLocationUpdates which looks like this:
 
-`requestLocationUpdates(String provider, long minTime, float minDistance, LocationListener listener)`
+```java
+requestLocationUpdates(String provider, long minTime, float minDistance, LocationListener listener)
+```
 
 This method is used to control when we want location updates. We can specify how often we want to get a location update with the minTime parameter. We can also specify the minimum distance (in meters) that the device has to move before we get a new location update with the minDistance parameter. Lastly we also specify which LocationListener we want to attach to our LocationManager. Whenever a new location update is made the attached LocationListeners onLocationChanged method is run.
 
@@ -53,7 +55,7 @@ The other LocationListener sends a location update only every 10 seconds, and ap
 
 The other method used in this app is OnProviderDisabled. This method is as the name tells run whenever the provider, in this case the gps is disabled. In this example we used the method to open a new activity in the settings application where the user can turn on the location service. This activity is opened by using the startActivity method.
 
-```
+```java
 Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
 
 startActivity(intent);

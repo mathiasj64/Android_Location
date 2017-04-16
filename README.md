@@ -2,9 +2,11 @@
 
 For an application to have permission to get the location from a device we will need to require the following permissions in the AndroidManifest.xml file.
 
-`<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-<uses-permission android:name="android.permission.INTERNET" />`
+`<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />`
+
+`<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />`
+
+`<uses-permission android:name="android.permission.INTERNET" />`
 
 ACCESS_COARSE_LOCATION is used when we use network location provider for our Android app. But, ACCESS_FINE_LOCATION is providing permission for both providers. INTERNET permission is must for the use of network provider.
 
@@ -25,13 +27,13 @@ This method is used to control when we want location updates. We can specify how
 
 The LocationListener is an interface which implements 4 methods. The methods are:
 
-`abstract void	onLocationChanged(Location location)
+`abstract void	onLocationChanged(Location location)`
 
-abstract void	onProviderDisabled(String provider)
+`abstract void	onProviderDisabled(String provider)`
 
-abstract void	onProviderEnabled(String provider)
+`abstract void	onProviderEnabled(String provider)`
 
-abstract void	onStatusChanged(String provider, int status, Bundle extras)`
+`abstract void	onStatusChanged(String provider, int status, Bundle extras)`
 
 In this example app we use the onLocationChanged and the OnProviderDisabled. 
 
@@ -47,9 +49,9 @@ The other LocationListener sends a location update only every 10 seconds, and ap
 
 The other method used in this app is OnProviderDisabled. This method is as the name tells run whenever the provider, in this case the gps is disabled. In this example we used the method to open a new activity in the settings application where the user can turn on the location service. This activity is opened by using the startActivity method.
 
-`Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+`Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);`
 
-startActivity(intent);`
+`startActivity(intent);`
 
 ## Location object
 The Location class is a class representing a geographic location.
@@ -84,15 +86,15 @@ Receive location update from LocationListener on change of location
 ## Provide permissions for receiving location update
 To access current location information through location providers, we need to set permissions with android manifest file.
 
-`<manifest ... >
+`<manifest ... >`
    
-   <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+`  <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />`
    
-   <uses-permission android:name="android.permission. ACCESS_COARSE_LOCATION" />
+`  <uses-permission android:name="android.permission. ACCESS_COARSE_LOCATION" />`
    
-   <uses-permission android:name="android.permission.INTERNET" />
+`  <uses-permission android:name="android.permission.INTERNET" />`
 
-</manifest>`
+`</manifest>`
 
 ACCESS_COARSE_LOCATION is used when we use network location provider for our Android app. But, ACCESS_FINE_LOCATION is providing permission for both providers. INTERNET permission is must for the use of network provider.
 

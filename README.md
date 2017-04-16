@@ -13,7 +13,7 @@ For an application to have permission to get the location from a device we will 
 ACCESS_COARSE_LOCATION is used when we use network location provider for our Android app. But, ACCESS_FINE_LOCATION is providing permission for both providers. INTERNET permission is must for the use of network provider.
 
 
-For our application to get GPS-information from a device we need to use the class LocationManager and the interface LocationListener.	
+For our application to get GPS-information from a device we need to use the class **LocationManager** and the interface **LocationListener**.	
 
 ## LocationManager:
 
@@ -27,7 +27,7 @@ The Android LocationManager is a class which has access to the location of the d
 requestLocationUpdates(String provider, long minTime, float minDistance, LocationListener listener)
 ```
 
-This method is used to control when we want location updates. We can specify how often we want to get a location update with the minTime parameter. We can also specify the minimum distance (in meters) that the device has to move before we get a new location update with the minDistance parameter. Lastly we also specify which LocationListener we want to attach to our LocationManager. Whenever a new location update is made the attached LocationListeners onLocationChanged method is run.
+This method is used to control when we want location updates. We can specify how often we want to get a location update with the **minTime** parameter. We can also specify the minimum distance (in meters) that the device has to move before we get a new location update with the **minDistance** parameter. Lastly we also specify which **LocationListener** we want to attach to our **LocationManager.** Whenever a new location update is made the attached **LocationListeners onLocationChanged** method is run.
 
 ## LocationListener:
 
@@ -43,19 +43,19 @@ abstract void	onProviderEnabled(String provider)
 abstract void	onStatusChanged(String provider, int status, Bundle extras)
 ```
 
-In this example app we use the onLocationChanged and the OnProviderDisabled. 
+In this example app we use the **onLocationChanged** and the **OnProviderDisabled**. 
 
 
 
 ### OnLocationChanged
 
-As mentioned above whenever location update is sent from the LocationManager the LocationListeners onLocationChanged method is called and a Location is passed. Now we can use the location for whatever we want. In this example we printed the latitude and longitude on two different TextViews. The textView is then updated every time a new location update is made.
-In this example we used two different LocationListeners. One which sends a location update 10 times each second, and gets replaced every time the location updates. This is used to see the location change all the time when the device is moved.
-The other LocationListener sends a location update only every 10 seconds, and appends the location to the older locations to see a log of previous locations on the screen.
+As mentioned above whenever location update is sent from the **LocationManager** the **LocationListeners onLocationChanged** method is called and a Location is passed. Now we can use the location for whatever we want. In this example we printed the latitude and longitude on two different TextViews. The textView is then updated every time a new location update is made.
+In this example we used two different **LocationListeners**. One which sends a location update 10 times each second, and gets replaced every time the location updates. This is used to see the location change all the time when the device is moved.
+The other **LocationListener** sends a location update only every 10 seconds, and appends the location to the older locations to see a log of previous locations on the screen.
 
 ### OnProviderDisabled
 
-The other method used in this app is OnProviderDisabled. This method is as the name tells run whenever the provider, in this case the gps is disabled. In this example we used the method to open a new activity in the settings application where the user can turn on the location service. This activity is opened by using the startActivity method.
+The other method used in this app is **OnProviderDisabled**. This method is as the name tells run whenever the provider, in this case the gps is disabled. In this example we used the method to open a new activity in the settings application where the user can turn on the location service. This activity is opened by using the startActivity method.
 
 ```java
 Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
@@ -67,7 +67,7 @@ startActivity(intent);
 The Location class is a class representing a geographic location.
 A location can consist of a latitude, longitude, which represents the coordinates in the geographic coordinate system. It can also consist of other information such as timestamp, bearing, altitude and velocity.
 
-When generating locations with the LocationManager, all locations are guranteed to have a valid latitude, longitude and timestamp, while other parameters are optional. The class has several methods e.g .DistanceBetween() which returns the distance in metres between your object and the given object. 
+When generating locations with the **LocationManager**, all locations are guranteed to have a valid latitude, longitude and timestamp, while other parameters are optional. The class has several methods e.g .DistanceBetween() which returns the distance in metres between your object and the given object. 
 
 
 

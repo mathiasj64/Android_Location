@@ -2,7 +2,7 @@
 
 For an application to have permission to get the location from a device we will need to require the following permissions in the AndroidManifest.xml file.
 
-```
+```xml
 <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 <uses-permission android:name="android.permission.INTERNET" />
@@ -27,7 +27,7 @@ This method is used to control when we want location updates. We can specify how
 
 The LocationListener is an interface which implements 4 methods. The methods are:
 
-```
+```java
 abstract void	onLocationChanged(Location location)
 
 abstract void	onProviderDisabled(String provider)
@@ -90,7 +90,7 @@ Receive location update from LocationListener on change of location
 ## Provide permissions for receiving location update
 To access current location information through location providers, we need to set permissions with android manifest file.
 
-```
+```xml
 <manifest ... >
    
    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -107,7 +107,9 @@ ACCESS_COARSE_LOCATION is used when we use network location provider for our And
 ## Create LocationManager instance as reference to the location service
 For any background Android Service, we need to get reference for using it. Similarly, location service reference will be created using getSystemService() method. This reference will be added with the newly created LocationManager instance as follows.
 
-`locationManager = (LocationManager)getSystemService(Context.LOCATION_SERVICE);`
+```java
+locationManager = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
+```
 
 ## Request current location from LocationManager
 After creating the location service reference, location updates are requested using requestLocationUpdates() method of LocationManager. For this function, we need to send the type of location provider, number of seconds, distance and the LocationListener object over which the location to be updated.

@@ -15,7 +15,9 @@ For our application to get GPS-information from a device we need to use the clas
 
 ## LocationManager:
 
-`locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);`
+`java
+locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
+`
 
 The Android LocationManager is a class which has access to the location of the device. It has a method called requestLocationUpdates which looks like this:
 
